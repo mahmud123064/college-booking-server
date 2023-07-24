@@ -63,6 +63,12 @@ async function run() {
       res.send(result)
     })
 
+    app.post('/admission', async(req, res)=> {
+      const newItem = req.body;
+      const result = await admissionCollection.insertOne(newItem);
+      res.send(result); 
+    })
+
 
 
 
